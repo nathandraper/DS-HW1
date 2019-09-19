@@ -1,0 +1,6 @@
+Title: Moby Dick
+Author full name: Herman Melville
+Author first name: Herman
+Author last name: Melville
+Line Count: 17
+WordCount: 184

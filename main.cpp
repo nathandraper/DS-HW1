@@ -32,6 +32,12 @@ string getString() {
 	return str;
 }
 
+void parseName(string name, string splitName[]) {
+	const int index = name.find(" ");
+	splitName[0] = name.substr(0, index);
+	splitName[1] = name.substr(index + 1, name.length());
+}
+
 void openFile(fstream& file, bool read) {
 	string filename;
 
@@ -53,10 +59,12 @@ void openFile(fstream& file, bool read) {
 
 int main() {
 	string run = "y";
+	string choice;
 	char input;
 	Book book;
 	fstream data;
 	ofstream output;
+	string splitName[2];
 
 	while (run == "y"){
 
@@ -99,17 +107,24 @@ int main() {
 		output.open(OUTPUT_FILENAME, ios::app);
 		
 		double totalChar = accumulate(begin(book.letterFrequency), end(book.letterFrequency), 0, plus<unsigned>());
+		parseName(book.author, splitName);
 
-		cout << "Title: " << book.author << "\nAuthor: " << book.title << "\nLine Count: " << book.lineCount << "\nWordCount: " << book.wordCount << endl;
-		cout << "Letter Frequency:\n";
-		for (int i = 0; i < LETTERS; i++) {
-			cout << (char)(i + (int)'a') << ": " << (double)(book.letterFrequency[i] / totalChar) << endl;
-		}
+		output << "Title: " << book.title << "\nAuthor full name: " << book.author << "\nAuthor first name: " << splitName[0] << "\nAuthor last name: " << splitName[1] 
+			<< "\nLine Count: " << book.lineCount << "\nWordCount: " << book.wordCount << endl;
 		
-		book = Book();
+		cout << "Would you like to view the letter frequency? y/n ";
+		choice = getString();
 
-		cout << "Would you like to enter another book? ";
-		run = getString();
+		if (choice == "y") {
+			cout << book.title << " Letter Frequency:\n";
+			for (int i = 0; i < LETTERS; i++) {
+				cout << (char)(i + (int)'a') << ": " << (double)(book.letterFrequency[i] / totalChar) << endl;
+			}
+		}
+			book = Book();
+
+			cout << "Would you like to enter another book? y/n ";
+			run = getString();
 	}
 	
 	return 0;
