@@ -1,6 +1,49 @@
+Title: Test Book
+Author full name: Testy McTesterson
+Author first name: Testy
+Author last name: McTesterson
+Line Count: 4
+Word Count: 8
+
+Title: Test Book
+Author full name: Testy McTesterson
+Author first name: Testy
+Author last name: McTesterson
+Line Count: 5
+Word Count: 9
+
+Title: Test Book
+Author full name: Testy McTesterson
+Author first name: Testy
+Author last name: McTesterson
+Line Count: 5
+Word Count: 9
+
+Title: Test Book
+Author full name: Testy McTesterson
+Author first name: Testy
+Author last name: McTesterson
+Line Count: 5
+Word Count: 10
+
 Title: Moby Dick
 Author full name: Herman Melville
 Author first name: Herman
 Author last name: Melville
 Line Count: 17
-WordCount: 184
+Word Count: 201
+
+Title: Test Book
+Author full name: Testy McTesterson
+Author first name: Testy
+Author last name: McTesterson
+Line Count: 5
+Word Count: 10
+
+Title: Moby Dick
+Author full name: Herman Melville
+Author first name: Herman
+Author last name: Melville
+Line Count: 17
+Word Count: 201
+
